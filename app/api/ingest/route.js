@@ -1,4 +1,4 @@
-import { serve } from "inngest/nextjs";
+import { serve } from "inngest/next";
 import { inngest } from "@/config/ingest";
 import { syncUserCreation, syncUserDeletion, syncUserUpdation } from "@/config/ingest";
 
