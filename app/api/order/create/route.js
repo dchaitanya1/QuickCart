@@ -23,7 +23,7 @@ export async function POST(request){
 
             const product = await Product.findById(item.product);
 
-            return access + product.offerPrice* item.quantity
+            return await access + product.offerPrice* item.quantity
         },0)
 
         await inngest.send({
