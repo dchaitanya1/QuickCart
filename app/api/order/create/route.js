@@ -1,7 +1,8 @@
 import { inngest } from "@/config/ingest";
 import Product from "@/models/Product";
-import { getAuth, User } from "@clerk/nextjs/server";
+import { getAuth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
+import User from "@/models/User";
 
 
 export async function POST(request){
@@ -22,7 +23,7 @@ export async function POST(request){
 
             const product = await Product.findById(item.product);
 
-            return acc + product.offerPrice* item.quantity
+            return access + product.offerPrice* item.quantity
         },0)
 
         await inngest.send({
